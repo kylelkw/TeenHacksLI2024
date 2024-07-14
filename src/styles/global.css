@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+  }
+  :root[data-theme="light"] {
+    --color-bg: 0 100% 100%;
+    --color-content1: 0 100% 100%;
+    --color-content2: 0 100% 100%;
+    --color-accent1: 0 100% 100%;
+    --color-accent2: 0 100% 100%;
+    --color-accent3: 0 100% 100%;
+    --color-highlight: 0 100% 100%;
+  }
+
+  :root[data-theme="dark"] {
+    --color-bg: 0 100% 100%;
+    --color-content1: 0 100% 100%;
+    --color-content2: 0 100% 100%;
+    --color-accent1: 0 100% 100%;
+    --color-accent2: 0 100% 100%;
+    --color-accent3: 0 100% 100%;
+    --color-highlight: 0 100% 100%;
+  }
+}
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
