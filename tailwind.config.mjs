@@ -6,9 +6,6 @@ export default {
 			fontFamily: {
 				display: ["Mona-Sans"]
 			},
-      boxShadow: {
-        cool: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
-      },
       colors: {
         content: {
           1: "hsl(var(--color-content1) / <alpha-value>)",
