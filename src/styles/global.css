@@ -4,7 +4,17 @@
 
 @layer base {
   :root {
+    --color-bg: 0 0% 8%;
+    --color-content1: 208 35% 93%;
+    --color-content2: 59 009% 59%;
+    --color-accent1: 195 63% 52%;
+    --color-accent2: 15 94.4% 58%;
+    --color-accent3: 51.7 100% 50%;
+    --color-highlight: 0 100% 100%;
   }
+
+  /* TODO: Light Theme */
+
   :root[data-theme="light"] {
     --color-bg: 0 100% 100%;
     --color-content1: 0 100% 100%;
@@ -15,16 +25,15 @@
     --color-highlight: 0 100% 100%;
   }
 
-  :root[data-theme="dark"] {
-    --color-bg: 0 100% 100%;
-    --color-content1: 0 100% 100%;
-    --color-content2: 0 100% 100%;
-    --color-accent1: 0 100% 100%;
-    --color-accent2: 0 100% 100%;
-    --color-accent3: 0 100% 100%;
-    --color-highlight: 0 100% 100%;
+  @font-face {
+    font-family: "Mona-Sans";
+    src: url("fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+      url("fonts/Mona-Sans.woff2") format("woff2-variations");
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
   }
 }
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
