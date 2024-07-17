@@ -2,33 +2,43 @@
 
 ---
 
-
 <div class="relative h-8 w-8 flex justify-center bg-content-2 rounded-full cursor-pointer active:scale-90 transition">
-  
     <input type="checkbox" class="absolute toggle-theme appearance-none w-full h-full" />
     <div class="">
-        <svg class="block m-1 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="hsl(var(--color-bg)/1)" class="size-8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        <svg
+            class="block m-1 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="hsl(var(--color-bg)/1)"
+            class="size-8"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            ></path>
         </svg>
     </div>
 </div>
 
-
 <script is:inline>
-
-    const html = document.querySelector("html");
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const defaultTheme = !prefersDarkMode ? "dark" : "light";
-    const preferredTheme = localStorage.getItem("theme")
+    const html = document.querySelector('html');
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const defaultTheme = !prefersDarkMode ? 'dark' : 'light';
+    const preferredTheme = localStorage.getItem('theme');
     if (!preferredTheme) {
-        localStorage.setItem("theme", defaultTheme);
+        localStorage.setItem('theme', defaultTheme);
     }
     html.dataset.theme = preferredTheme || defaultTheme;
-    document.addEventListener("astro:after-swap", () => document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")));
-    document.querySelector(".toggle-theme").addEventListener("click", () => {
-        const isDarkTheme = localStorage.getItem("theme") === "dark";
-        const newTheme = isDarkTheme ? "light" : "dark"
-        localStorage.setItem("theme", newTheme);
+    document.addEventListener('astro:after-swap', () =>
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+    );
+    document.querySelector('.toggle-theme').addEventListener('click', () => {
+        const isDarkTheme = localStorage.getItem('theme') === 'dark';
+        const newTheme = isDarkTheme ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
         html.dataset.theme = newTheme;
     });
 </script>

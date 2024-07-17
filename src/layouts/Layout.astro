@@ -1,22 +1,19 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css';
 import CommonMeta from '../components/common/CommonMeta.astro';
 export interface Props {
-	title ?: String;
+    title?: String;
 }
 
-const {
-	title,
-} = Astro.props;
+const { title } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<CommonMeta title={title}/>
-
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <CommonMeta title={title} />
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>
-
