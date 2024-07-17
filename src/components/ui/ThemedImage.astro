@@ -1,0 +1,30 @@
+---
+interface Props {
+    darkModeUrl: string;
+    lightModeUrl: string;
+    className?: string;
+}
+
+const { darkModeUrl, lightModeUrl, className = '' } = Astro.props;
+---
+
+<img class={className} id="img" />
+
+<script define:vars={{ darkModeUrl, lightModeUrl }}>
+    const image = document.getElementById('img');
+
+    const updateImage = () => {
+        const theme = document.documentElement.dataset.theme;
+        const src = theme === 'dark' ? darkModeUrl : lightModeUrl;
+        image.src = src;
+    };
+
+    const observer = new MutationObserver((mutations) => {
+        if (mutations.filter((m) => m.attributeName === 'data-theme').length > 0) {
+            updateImage();
+        }
+    });
+    observer.observe(document.documentElement, { attributes: true });
+
+    updateImage();
+</script>
