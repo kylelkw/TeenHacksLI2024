@@ -1,0 +1,30 @@
+---
+import ThemeSwitch from "../common/ThemeSwitch.astro";
+import Navigation from "../common/Navigation"
+
+interface Props {
+    isSticky?: Boolean;
+    showMenu?: Boolean;
+    showDarkModeSwitch?: Boolean;
+}
+const{
+    isSticky = true,
+    showMenu = true,
+    showDarkModeSwitch = true,
+} = Astro.props;
+---
+
+<header class:list={[{sticky:isSticky, relative:!isSticky},'top-0 z-30 flex w-full p-6']}>
+
+    <nav class="flex justify-around items-center w-screen px-10 p-3">
+        <!-- Put in Logo -->
+        <span class="text-content-2">LOGO</span>
+        <Navigation client:load></Navigation>
+        <ThemeSwitch transition:persist class:list ={[{hidden: !showDarkModeSwitch}, 'relative']}/>
+
+        
+    </nav>
+    
+
+
+</header>
