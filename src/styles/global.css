@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 @layer base {
   :root {
@@ -45,3 +44,9 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+.button {
+  @apply text-2xl text-bg font-semibold bg-accent-1 rounded-lg hover:scale-105 transition-all w-52 h-12
+}
+
+@tailwind utilities;

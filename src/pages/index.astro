@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FadeOnScroll from "../components/FadeOnScroll.astro"
 ---
 
 <Layout>
@@ -9,7 +10,17 @@ import Layout from '../layouts/Layout.astro';
 				<h1 class="text-8xl font-display font-semibold text-accent-2">Teenhacks LI 2024</h1>
 				<p class="text-4xl font-display ml-2 text-content-1">12 hour hackathon in Long Island for all skill levels.</p>
 			</div>
-			<img class="w-12 absolute top-[85vh] animate-bounceDown" src="/svgs/chevron.svg"/>
+			<div class="flex space-x-8">
+				<button class="button">Sign Up</button>
+				<button class="button bg-bg text-content-1 outline-2 outline-accent-2 outline">View Schedule</button>
+			</div>
+			<FadeOnScroll>
+				<img class="w-12 absolute top-[85vh] animate-bounceDown" src="/svgs/chevron.svg"/>
+			</FadeOnScroll>
+		</section>
+
+		<section class="flex flex-col items-center h-screen"> 
+			<h1 class="text-8xl font-display font-semibold text-accent-2">Our Story</h1> 
 		</section>
 	</main>
-</Layout>
+</Layout> 

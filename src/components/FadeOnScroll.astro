@@ -1,0 +1,23 @@
+<style>
+  .fade-out {
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+
+  .fade-out.faded {
+    opacity: 0;
+  }
+</style>
+
+<div id="fade" class="fade-out">
+  <slot /> 
+</div>
+
+<script>
+  const element = document.getElementById('fade');
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      element.classList.add("faded")
+    } else element.classList.remove("faded")
+  })
+</script>
