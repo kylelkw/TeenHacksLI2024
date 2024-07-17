@@ -12,8 +12,8 @@ const Menu = true;
 ---
 
 <Layout title={title}>
-    <Header client:load isSticky={Sticky} showMenu={Menu} class:list={'sticky top-0'} />
-    <main class="absolute inset-0 bg-bg">
+    <Header isSticky={Sticky} showMenu={Menu} class:list={'sticky top-0'} />
+    <main class="absolute inset-0">
         <slot />
     </main>
     <Footer />
