@@ -3,7 +3,7 @@ import { ChevronDownIcon } from '@heroicons/react/16/solid';
 
 const Navigation = () => {
     return (
-        <nav>
+        <nav className='ml-auto'>
             <ul className="hidden lg:flex space-x-10">
                 <li>
                     <Menu>

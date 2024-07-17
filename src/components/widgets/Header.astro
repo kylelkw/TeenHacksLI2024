@@ -11,11 +11,14 @@ interface Props {
 const { isSticky = true, showMenu = true, showDarkModeSwitch = true } = Astro.props;
 ---
 
-<header class:list={[{ sticky: isSticky, relative: !isSticky }, 'top-0 z-30 flex w-full  p-6']}>
-    <nav class="flex justify-around items-center w-screen p-3 px-10">
-        <!-- Put in Logo -->    
-        <ThemedImage darkModeUrl="/images/textLogoWhite.png" lightModeUrl="/images/textLogoBlack.png" className = "h-[50%] absolute left-0"/> 
-        <Navigation client:load />
-        <ThemeSwitch transition:persist class:list={[{ hidden: !showDarkModeSwitch }, 'relative']} />
-    </nav>
+<header
+    class:list={[{ sticky: isSticky, relative: !isSticky }, 'top-0 z-30 flex p-6 justify-center items-center w-screen']}
+>
+    <ThemedImage
+        darkModeUrl="/images/textLogoWhite.png"
+        lightModeUrl="/images/textLogoBlack.png"
+        className="h-[50%] absolute left-8"
+    />
+    <Navigation client:load />
+    <ThemeSwitch transition:persist class:list={[{ hidden: !showDarkModeSwitch }]} />
 </header>
