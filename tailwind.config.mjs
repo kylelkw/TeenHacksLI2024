@@ -3,9 +3,9 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-			fontFamily: {
-				display: ["Mona-Sans"]
-			},
+      fontFamily: {
+        display: ["Mona-Sans"],
+      },
       colors: {
         content: {
           1: "hsl(var(--color-content1) / <alpha-value>)",
@@ -18,6 +18,15 @@ export default {
         },
         bg: "hsl(var(--color-bg) / <alpha-value>)",
         highlight: "hsl(var(--color-highlight) / <alpha-value>)",
+      },
+      keyframes: {
+        bounceDown: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(10px)" },
+        },
+      },
+      animation: {
+        bounceDown: `bounceDown 2s ease-in-out infinite`,
       },
     },
   },
