@@ -12,17 +12,17 @@ const { isSticky = true, showMenu = true, showDarkModeSwitch = true } = Astro.pr
 ---
 
 <header
-    class:list={[
-        { sticky: isSticky, relative: !isSticky },
-        'top-0 z-30 flex p-6 justify-center items-center h-24',
-    ]}
+    class:list={[{ sticky: isSticky, relative: !isSticky }, 'top-0 z-30 flex p-6 justify-center items-center h-24']}
 >
     <div class="w-4"></div>
-    <ThemedImage
-        darkModeUrl="/images/textLogoWhite.png"
-        lightModeUrl="/images/textLogoBlack.png"
-        className="h-[65%] absolute left-8"
-    />
+    <a class="absolute left-8 h-[65%] flex items-center" href="/">
+        <ThemedImage
+            darkModeUrl="/images/textLogoWhite.png"
+            lightModeUrl="/images/textLogoBlack.png"
+            className="h-full"
+        />
+    </a>
+
     <Navigation client:load />
     <ThemeSwitch transition:persist class:list={[{ hidden: !showDarkModeSwitch }]} />
 </header>
