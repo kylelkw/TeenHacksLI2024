@@ -3,12 +3,13 @@ interface Props {
     darkModeUrl: string;
     lightModeUrl: string;
     className?: string;
+    loading?: 'eager' | 'lazy';
 }
 
-const { darkModeUrl, lightModeUrl, className = '' } = Astro.props;
+const { darkModeUrl, lightModeUrl, className = '', loading = 'lazy' } = Astro.props;
 ---
 
-<img class={className} id="img" />
+<img class={className} id="img" loading={loading} />
 
 <script define:vars={{ darkModeUrl, lightModeUrl }}>
     const image = document.getElementById('img');
