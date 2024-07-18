@@ -26,21 +26,21 @@
 </div>
 
 <script is:inline>
-    const html = document.querySelector('html');
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const defaultTheme = !prefersDarkMode ? 'dark' : 'light';
-    const preferredTheme = localStorage.getItem('theme');
+    const html = document.querySelector("html");
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const defaultTheme = !prefersDarkMode ? "dark" : "light";
+    const preferredTheme = localStorage.getItem("theme");
     if (!preferredTheme) {
-        localStorage.setItem('theme', defaultTheme);
+        localStorage.setItem("theme", defaultTheme);
     }
     html.dataset.theme = preferredTheme || defaultTheme;
-    document.addEventListener('astro:after-swap', () =>
-        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+    document.addEventListener("astro:after-swap", () =>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"))
     );
-    document.querySelector('.toggle-theme').addEventListener('click', () => {
-        const isDarkTheme = localStorage.getItem('theme') === 'dark';
-        const newTheme = isDarkTheme ? 'light' : 'dark';
-        localStorage.setItem('theme', newTheme);
+    document.querySelector(".toggle-theme").addEventListener("click", () => {
+        const isDarkTheme = localStorage.getItem("theme") === "dark";
+        const newTheme = isDarkTheme ? "light" : "dark";
+        localStorage.setItem("theme", newTheme);
         html.dataset.theme = newTheme;
     });
 </script>

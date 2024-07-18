@@ -12,7 +12,7 @@
         --color-highlight: 0 100% 100%;
     }
     /* Lightmode */
-    :root[data-theme='light'] {
+    :root[data-theme="light"] {
         --color-bg: 0 80% 100%;
         --color-content1: 220 4% 32%;
         --color-content2: 220 4% 59%;
@@ -22,7 +22,7 @@
         --color-highlight: 0 0% 0%;
     }
     /* Darkmode */
-    :root[data-theme='dark'] {
+    :root[data-theme="dark"] {
         --color-bg: 0 0% 8%;
         --color-content1: 208 35% 93%;
         --color-content2: 59 009% 59%;
@@ -33,10 +33,10 @@
     }
 
     @font-face {
-        font-family: 'Mona-Sans';
+        font-family: "Mona-Sans";
         src:
-            url('fonts/Mona-Sans.woff2') format('woff2 supports variations'),
-            url('fonts/Mona-Sans.woff2') format('woff2-variations');
+            url("fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+            url("fonts/Mona-Sans.woff2") format("woff2-variations");
         font-weight: 200 900;
         font-stretch: 75% 125%;
     }

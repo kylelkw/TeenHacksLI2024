@@ -1,7 +1,7 @@
 ---
-import ThemeSwitch from '../common/ThemeSwitch.astro';
-import Navigation from '../common/Navigation';
-import ThemedImage from '../ui/ThemedImage.astro';
+import ThemeSwitch from "../common/ThemeSwitch.astro";
+import Navigation from "../common/Navigation";
+import ThemedImage from "../ui/ThemedImage.astro";
 
 interface Props {
     isSticky?: Boolean;
@@ -12,7 +12,7 @@ const { isSticky = true, showMenu = true, showDarkModeSwitch = true } = Astro.pr
 ---
 
 <header
-    class:list={[{ sticky: isSticky, relative: !isSticky }, 'top-0 z-30 flex p-6 justify-center items-center h-24']}
+    class:list={[{ sticky: isSticky, relative: !isSticky }, "top-0 z-30 flex p-6 justify-center items-center h-24"]}
 >
     <div class="w-4"></div>
     <a class="absolute left-8 h-[65%] flex items-center" href="/">
