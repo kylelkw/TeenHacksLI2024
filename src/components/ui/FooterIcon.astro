@@ -3,17 +3,11 @@ interface Props {
     imageUrl: string;
     linkToSend: string;
     className?: string;
-    buttonId?: string;
 }
 
-
-const { imageUrl, linkToSend, className = "", buttonId = `button-${Math.random()}`} = Astro.props;
+const { imageUrl, linkToSend, className = "" } = Astro.props;
 ---
 
-<button
-    id={buttonId} 
-    onclick={`window.location.href='${linkToSend}'`}
-    class={className}
->
+<a href={linkToSend} class={className}>
     <img src={imageUrl} alt="button icon" />
-</button>
+</a>
