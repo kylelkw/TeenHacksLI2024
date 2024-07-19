@@ -1,13 +1,14 @@
 ---
 interface Props {
     imageUrl: string;
-    linkToSend: string;
+    href: string;
     className?: string;
+    alt?: string;
 }
 
-const { imageUrl, linkToSend, className = "" } = Astro.props;
+const { imageUrl, href, className = "", alt} = Astro.props;
 ---
 
-<a href={linkToSend} class={className}>
-    <img src={imageUrl} alt="button icon" />
+<a href={href} class={className}>
+    <img src={imageUrl} alt= {alt} />
 </a>
