@@ -1,0 +1,33 @@
+---
+import InformationalIcon from "./InformationalIcon.tsx";
+---
+
+<h1 class="text-8xl font-display font-semibold text-accent-2">Event Information</h1>
+<div class="flex flex-col w-screen justify-center mt-12 space-y-8">
+    <div class="flex justify-center w-full">
+        <InformationalIcon title="Cost of attending" icon={"DOLLAR"} client:load>
+            Teenhacks is <strong>completely free</strong> for everyone thanks to our generous sponsors. This includes food,
+            swag and awesome prizes.
+        </InformationalIcon>
+        <InformationalIcon title="I don't have a team" icon="PEOPLE" client:load>
+            In the beginning, we’ll have a team formation session to make sure you’re not alone. We encourage you to
+            form teams of up to 4 members. Individuals will not be eligible for prizes.
+        </InformationalIcon>
+        <InformationalIcon title="Who can attend" icon="STUDENT" client:load>
+            All <strong>high school</strong> students are welcome to attend. If you are older or younger and still want to
+            participate as a hacker, shoot us an email. If you're older, we welcome you to sign-up as a mentor!
+        </InformationalIcon>
+    </div>
+    <div class="flex justify-center w-full">
+        <InformationalIcon title="Are there prizes" icon="GIFT" client:load>
+            The top projects will be eligable for some sweet prizes. More information regarding the prizes will be
+            released as the event comes closer. Note that only teams (not individuals) are eligable for prizes.
+        </InformationalIcon>
+        <InformationalIcon title="What will I code" icon="DEVELOPER" client:load>
+            You will be able to code whatever you believe best highlights your unique set of skills. Unlike other
+            hackathons there are no specific themes you must follow. All projects will be judged equally on <strong
+                >complexity, technicality, and functionality</strong
+            > regardless of what they do
+        </InformationalIcon>
+    </div>
+</div>

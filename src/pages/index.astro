@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/LandingLayout.astro";
 import FadeOnScroll from "../components/FadeOnScroll.astro";
+import { CurrencyDollarIcon } from "@heroicons/react/16/solid";
+import InformationalIcon, { Icons } from "../components/widgets/InformationalIcon.tsx";
+import EventInformation from "../components/widgets/EventInformation.astro";
 ---
 
 <Layout>
@@ -21,8 +24,8 @@ import FadeOnScroll from "../components/FadeOnScroll.astro";
             </FadeOnScroll>
         </section>
 
-        <section class="flex flex-col items-center h-screen">
-            <h1 class="text-8xl font-display font-semibold text-accent-2">Our Story</h1>
+        <section class="flex flex-col items-center h-[95vh] overflow-hidden">
+            <EventInformation />
         </section>
     </main>
 </Layout>
