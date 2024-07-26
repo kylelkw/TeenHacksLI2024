@@ -30,7 +30,7 @@ interface Props {
 
 export default function InformationalIcon({ title, icon, children }: PropsWithChildren<Props>) {
     return (
-        <div className="flex flex-col w-[25%] items-center space-x-8">
+        <div className="flex flex-col w-[25%] items-center px-6">
             {Icons[icon]}
             <h2 className="text-4xl text-center font-display text-accent-1 w-[75%]">{title}</h2>
             <AnimatedLine className="border-t-2 border-accent-2 my-4" />
