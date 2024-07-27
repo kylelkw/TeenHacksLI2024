@@ -26,5 +26,5 @@ export default function ThemedImage({ darkModeUrl, lightModeUrl, alt, className,
 
         updateImage();
     });
-    return <img className={className} id="img" loading={loading} alt={alt} ref={ref} />;
+    return <img className={className} loading={loading} alt={alt} ref={ref} />;
 }

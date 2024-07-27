@@ -7,14 +7,14 @@ export interface Props {
 }
 
 const { title = "Teenhacks LI" } = Astro.props;
-const Sticky = true;
+const Sticky = false;
 const Menu = true;
 ---
 
 <Layout title={title}>
-    <Header isSticky={Sticky} showMenu={Menu} class:list={"sticky top-0"} />
     <main class="absolute inset-0">
+        <Header isSticky={Sticky} showMenu={Menu} class:list={"sticky top-0"} />
         <slot />
+        <Footer />
     </main>
-    <Footer />
 </Layout>

@@ -1,0 +1,24 @@
+---
+import ThemedImage from "../ui/ThemedImage.tsx";
+
+const year = new Date().getFullYear();
+---
+
+<div class="flex bg-bg items-center justify-center pt-8">
+    <div class="flex flex-col flex-shrink justify-center items-center w-[30vw] ml-12 p-14">
+        <ThemedImage
+            darkModeUrl="/images/textLogoWhite.png"
+            lightModeUrl="/images/textLogoBlack.png"
+            className="w-[400px] aspect-auto"
+            loading="lazy"
+            alt="Teenhacks Logo"
+            client:load
+        />
+        <p class="text-content-2 text-center text-lg">
+            TeenHacks LI is a 501(c)3 non-profit organization under the fiscal sponsorship of The Hack Foundation. EIN:
+            81-2908499.
+        </p>
+        <p class="mt-6 text-content-2">Teenhacks Li © {year}. All rights reserved.</p>
+        <p class="text-content-2">Contact: thli@teenhacksli.com</p>
+    </div>
+</div>
