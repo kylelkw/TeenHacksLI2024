@@ -30,8 +30,8 @@ export default {
                 },
             },
             animation: {
-                bounceDown: `bounceDown 2s ease-in-out infinite`,
-                aniamtedLine: `animatedLine 1s ease-out forwards`
+                bounceDown: "bounceDown 2s ease-in-out infinite",
+                aniamtedLine: "animatedLine 1s ease-out forwards",
             },
         },
     },

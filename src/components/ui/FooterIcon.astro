@@ -6,9 +6,9 @@ interface Props {
     alt?: string;
 }
 
-const { imageUrl, href, className = "", alt} = Astro.props;
+const { imageUrl, href, className = "", alt } = Astro.props;
 ---
 
 <a href={href} class={className}>
-    <img src={imageUrl} alt= {alt} />
+    <img src={imageUrl} alt={alt} />
 </a>

@@ -3,10 +3,10 @@ module.exports = {
     printWidth: 120,
     semi: true,
     tabWidth: 4,
-    trailingComma: 'es5',
+    trailingComma: "es5",
     useTabs: false,
 
-    plugins: [require.resolve('prettier-plugin-astro')],
+    plugins: [require.resolve("prettier-plugin-astro")],
 
-    overrides: [{ files: '*.astro', options: { parser: 'astro' } }],
+    overrides: [{ files: "*.astro", options: { parser: "astro" } }],
 };
