@@ -4,6 +4,7 @@ import FadeOnScroll from "../components/FadeOnScroll.astro";
 import { CurrencyDollarIcon } from "@heroicons/react/16/solid";
 import InformationalIcon, { Icons } from "../components/widgets/InformationalIcon.tsx";
 import EventInformation from "../components/widgets/EventInformation.astro";
+import { ChevronDoubleDownIcon } from "@heroicons/react/20/solid";
 ---
 
 <Layout>
@@ -20,7 +21,7 @@ import EventInformation from "../components/widgets/EventInformation.astro";
                 <button class="button bg-bg text-content-1 outline-2 outline-accent-2 outline">View Schedule</button>
             </div>
             <FadeOnScroll>
-                <img class="w-12 absolute top-[85vh] animate-bounceDown" src="/svgs/chevron.svg" />
+                <ChevronDoubleDownIcon className="w-12 absolute top-[85vh] animate-bounceDown fill-content-2" />
             </FadeOnScroll>
         </section>
 
