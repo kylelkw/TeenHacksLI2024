@@ -1,7 +1,7 @@
 ---
 import ThemeSwitch from "../common/ThemeSwitch.astro";
 import Navigation from "../common/Navigation";
-import ThemedImage from "../ui/ThemedImage.astro";
+import ThemedImage from "../ui/ThemedImage.tsx"
 
 interface Props {
     isSticky?: Boolean;
@@ -22,6 +22,7 @@ const { isSticky = true, showMenu = true, showDarkModeSwitch = true } = Astro.pr
             className="h-full"
             loading="eager"
             alt="Teenhacks Logo"
+            client:load
         />
     </a>
 
