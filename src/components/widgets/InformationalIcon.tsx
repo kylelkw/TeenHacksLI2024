@@ -1,13 +1,10 @@
 import {
     AcademicCapIcon,
-    BanknotesIcon,
     CodeBracketIcon,
     CurrencyDollarIcon,
     GiftIcon,
-    TicketIcon,
     UserGroupIcon,
 } from "@heroicons/react/16/solid";
-import type React from "react";
 import type { PropsWithChildren } from "react";
 import AnimatedLine from "./AniamtedLine";
 

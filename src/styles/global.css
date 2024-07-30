@@ -58,4 +58,20 @@
     @apply text-2xl text-bg font-semibold bg-accent-1 rounded-lg hover:scale-105 transition-all w-52 h-12;
 }
 
+.image-section-image {
+    box-shadow:
+        0 0 0 8px hsl(var(--color-bg)),
+        0 0 0 10px hsl(var(--color-accent2));
+
+    @apply w-[30%] rounded-xl hover:scale-[1.15] transition-transform duration-[400ms];
+}
+
+.rotate-left {
+    transform: perspective(800px) rotateX(-5deg) rotateY(15deg);
+}
+
+.rotate-right {
+    transform: perspective(800px) rotateX(-5deg) rotateY(-15deg); 
+}
+
 @tailwind utilities;

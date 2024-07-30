@@ -1,16 +1,14 @@
 ---
 import Layout from "../layouts/LandingLayout.astro";
 import FadeOnScroll from "../components/FadeOnScroll.astro";
-import { CurrencyDollarIcon } from "@heroicons/react/16/solid";
-import InformationalIcon, { Icons } from "../components/widgets/InformationalIcon.tsx";
 import EventInformation from "../components/widgets/EventInformation.astro";
 import { ChevronDoubleDownIcon } from "@heroicons/react/20/solid";
-import ThemedImage from "../components/ui/ThemedImage.tsx"
+import ImageSection from "../components/widgets/ImageWithText.astro";
 ---
 
 <Layout>
     <main class="flex flex-col">
-        <section class="flex flex-col justify-center items-center h-screen space-y-8">
+        <section class="flex flex-col items-center justify-center h-screen space-y-8">
             <div class="flex flex-col text-center">
                 <h1 class="text-8xl font-display font-semibold text-accent-2">Teenhacks LI 2024</h1>
                 <p class="text-4xl font-display ml-2 text-content-1">
@@ -25,7 +23,25 @@ import ThemedImage from "../components/ui/ThemedImage.tsx"
                 <ChevronDoubleDownIcon className="w-12 absolute top-[85vh] animate-bounceDown fill-content-2" />
             </FadeOnScroll>
         </section>
-
+        <ImageSection
+            src="https://teenhacks-media.s3.us-east-2.amazonaws.com/public/img/f19/f19(8).JPG"
+            title="Long Island's Premier Hackathon"
+            orientation="LTR"
+        >
+            TeenHacks LI is Long Island’s premier high school hackathon, <strong>by students, for students.</strong> Take part in group
+            collaboration, interesting workshops, sweet prizes, and more. Get ready to meet new people and have an
+            amazing time. Join our community as we build the future!
+        </ImageSection>
+        <ImageSection
+            src="https://teenhacks-media.s3.us-east-2.amazonaws.com/public/img/f19/f19(4).JPG"
+            title="For beginner and advanced developers alike"
+            orientation="RTL"
+        >
+            While teenhacks offers a competitive enviorement for advanced and intermediate developers to compete, we
+            also offer a multitude of workshops aimed at teaching programming skills to those who aren't as familiar.
+            These workshops range from very beginner, to intermediate, and andvanced and are suitable for all skill
+            levels. Teenhacks is truly a place where <strong>any developer can thrive.</strong>
+        </ImageSection>
         <section class="flex flex-col items-center overflow-hidden">
             <EventInformation />
         </section>
