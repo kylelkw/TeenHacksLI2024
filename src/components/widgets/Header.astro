@@ -1,7 +1,7 @@
 ---
 import ThemeSwitch from "../common/ThemeSwitch.astro";
-import Navigation from "../common/Navigation";
-import ThemedImage from "../ui/ThemedImage.tsx"
+import Navigation from "../common/Navigation.astro";
+import ThemedImage from "../ui/ThemedImage.tsx";
 
 interface Props {
     isSticky?: Boolean;
@@ -12,13 +12,15 @@ const { isSticky = true, showMenu = true, showDarkModeSwitch = true } = Astro.pr
 ---
 
 <header
-    class:list={[{ sticky: isSticky, relative: !isSticky }, "top-0 z-30 flex p-6 justify-center items-center h-24"]}
+    class:list={[
+        { sticky: isSticky, relative: !isSticky },
+        "top-0 z-30 flex p-6 justify-center items-center h-24 rounded-b-3xl",
+    ]}
 >
-    <div class="w-4"></div>
     <a class="absolute left-8 h-[65%] flex items-center" href="/">
         <ThemedImage
-            darkModeUrl="/images/textLogoWhite.png"
-            lightModeUrl="/images/textLogoBlack.png"
+            darkModeUrl="/icons/textLogoWhite.svg"
+            lightModeUrl="/icons/textLogoBlack.svg"
             className="h-full"
             loading="eager"
             alt="Teenhacks Logo"
@@ -26,6 +28,10 @@ const { isSticky = true, showMenu = true, showDarkModeSwitch = true } = Astro.pr
         />
     </a>
 
-    <Navigation client:load />
-    <ThemeSwitch transition:persist class:list={[{ hidden: !showDarkModeSwitch }]} />
+    <Navigation />
+
+    <div class="flex items-center justify-center absolute right-20 space-x-8">
+        <button class="bg-content-2 rounded-full h-10"><a class="font-display font-bold text-content-1 p-6 text-lg">Join now</a></button>
+        <ThemeSwitch transition:persist class:list={[{ hidden: !showDarkModeSwitch }]} />
+    </div>
 </header>
