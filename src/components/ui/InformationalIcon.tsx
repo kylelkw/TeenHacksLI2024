@@ -7,7 +7,6 @@ import {
 } from "@heroicons/react/16/solid";
 import type { PropsWithChildren } from "react";
 import AnimatedLine from "./AniamtedLine";
-
 const iconClass = "fill-accent-1 h-28";
 
 export const Icons = {
