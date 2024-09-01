@@ -16,4 +16,4 @@ const { text, href, style = "PRIMARY" } = Astro.props;
 const buttonClass = baseStyles + " " + ButtonStyle[style];
 ---
 
-<button class={`${buttonClass}`}><a href={href}>{text}</a></button>
+<button class={buttonClass}><a href={href}>{text}</a></button>
