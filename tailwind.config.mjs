@@ -10,6 +10,7 @@ export default {
                 content: {
                     1: "hsl(var(--color-content1) / <alpha-value>)",
                     2: "hsl(var(--color-content2) / <alpha-value>)",
+                    3: "hsl(var(--color-content3) / <alpha-value>)",
                 },
                 accent: {
                     1: "hsl(var(--color-accent1) / <alpha-value>)",

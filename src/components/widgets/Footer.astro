@@ -1,24 +1,122 @@
 ---
 import ThemedImage from "../ui/ThemedImage.tsx";
-
-const year = new Date().getFullYear();
+import ItemColumn from "../ui/ItemColumn.astro"
+import Button from "../ui/Button.astro";
 ---
-
-<div class="flex bg-bg items-center justify-center pt-8">
-    <div class="flex flex-col flex-shrink justify-center items-center w-[30vw] ml-12 p-14">
-        <ThemedImage
-            darkModeUrl="/images/textLogoWhite.png"
-            lightModeUrl="/images/textLogoBlack.png"
-            className="w-[400px] aspect-auto"
-            loading="lazy"
-            alt="Teenhacks Logo"
-            client:load
-        />
-        <p class="text-content-2 text-center text-lg">
-            TeenHacks LI is a 501(c)3 non-profit organization under the fiscal sponsorship of The Hack Foundation. EIN:
-            81-2908499.
-        </p>
-        <p class="mt-6 text-content-2">Teenhacks Li © {year}. All rights reserved.</p>
-        <p class="text-content-2">Contact: thli@teenhacksli.com</p>
+<div class="flex flex-col w-screen h-2/3 pt-14 px-14">
+    <div class="w-full h-full bg-content-3 rounded-t-3xl flex pt-14 px-14">
+        <div class="w-1/3 h-full flex flex-col justify-between">
+            <a class="h-[10%]" href="/">
+                <ThemedImage
+                    darkModeUrl="/icons/textLogoWhite.svg"
+                    lightModeUrl="/icons/textLogoBlack.svg"
+                    className="h-full"
+                    loading="eager"
+                    alt="Teenhacks Logo"
+                    client:load
+                />
+            </a>
+            <p class="text-content-1 p-2 mb-7">
+                © TeenHacks LI 2024
+            </p>
+        </div>
+        <div class="w-2/3 h-full  flex flex-col">
+        <div class="w-full h-[45%] bg-content-1 rounded-3xl flex flex-col justify-between text-content-3 p-5">
+            <input class="outline-none border-0 bg-transparent text-5xl placeholder-bg" id="email" name="email" type="text" required="" placeholder="Enter Your Email">
+            <div class="flex justify-between items-end">
+                <p class="text-bg text-lg">
+                    Sign up to join our newsletter and be notified of future TeenHacks LI events
+                </p>
+                <Button href="/join" text="Join Now" style="ACCENT1"/>
+            </div>
+        </div>
+        <section class="w-full h-[65%] flex justify-between text-content-1 px-20 py-5">
+            <div>
+                <p class="text-content-2">Resources</p>
+                <ItemColumn 
+                    items={[
+                        {
+                            title: 'Blogs',
+                            link: '/',
+                        },
+                        {
+                            title: 'FAQs',
+                            link: '/',
+                        },
+                        {
+                            title: 'Past Events',
+                            link: '/',
+                        },
+                        {
+                            title: 'Past Pages',
+                            link: '/',
+                        },
+                    ]}
+                />
+            </div>
+            <div>
+                <p class="text-content-2">Company</p>
+                <ItemColumn 
+                    items={[
+                        {
+                            title: 'About',
+                            link: '/',
+                        },
+                        {
+                            title: 'Team',
+                            link: '/',
+                        },
+                        {
+                            title: 'Sponsors',
+                            link: '/',
+                        },
+                        {
+                            title: 'Press',
+                            link: '/',
+                        },
+                        {
+                            title: 'Contact',
+                            link: '/',
+                        },
+                    ]}
+                />
+            </div>
+            <div>
+                <p class="text-content-2">Socials</p>
+                <ItemColumn 
+                    items={[
+                        {
+                            title: 'Instagram',
+                            link: '/',
+                        },
+                        {
+                            title: 'Twitter/X',
+                            link: '/',
+                        },
+                        {
+                            title: 'Facebook',
+                            link: '/',
+                        },
+                        {
+                            title: 'Discord',
+                            link: '/',                        
+                        },
+                        {
+                            title: 'Youtube',
+                            link: '/',
+                        },
+                        {
+                            title: 'LinkedIn',
+                            link: '/',
+                        },
+                        {
+                            title: 'Github',
+                            link: '/',
+                        },
+                    ]}
+                />
+            </div>
+            
+        </section>
     </div>
 </div>
