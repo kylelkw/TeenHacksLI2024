@@ -1,14 +1,14 @@
 ---
-const {
-    items = [],
-} = Astro.props
-
+const { items = [] } = Astro.props;
 ---
+
 {
     items && (
         <div class:list="flex flex-col">
-            {items.map(({title, description, link}) => (
-                <a href={link}><p>{title}</p></a>
+            {items.map(({ title, description, link }) => (
+                <a href={link}>
+                    <p>{title}</p>
+                </a>
             ))}
         </div>
     )

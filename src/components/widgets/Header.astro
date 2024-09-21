@@ -31,7 +31,9 @@ const { isSticky = true, showMenu = true, showDarkModeSwitch = true } = Astro.pr
     <Navigation />
 
     <div class="flex items-center justify-center absolute right-20 space-x-8">
-        <button class="bg-content-2 rounded-full h-10 hover:scale-105 transition-all"><a class="font-display font-bold text-content-1 p-6 text-lg">Join now</a></button>
+        <button class="bg-content-2 rounded-full h-10 hover:scale-105 transition-all"
+            ><a class="font-display font-bold text-content-1 p-6 text-lg">Join now</a></button
+        >
         <ThemeSwitch transition:persist class:list={[{ hidden: !showDarkModeSwitch }]} />
     </div>
 </header>
