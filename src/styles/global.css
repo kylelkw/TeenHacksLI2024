@@ -81,7 +81,7 @@
 }
 
 .rotate-right {
-    transform: perspective(800px) rotateX(-5deg) rotateY(-15deg);
+    transform: perspective(800px) rotateX(-5deg) rotateY(-15deg); 
 }
 
 @tailwind utilities;
