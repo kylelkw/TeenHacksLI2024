@@ -1,0 +1,17 @@
+---
+const {
+    items = []
+} = Astro.props
+---
+{
+    items && (
+        <div class:list="flex gap-14">
+            {items.map(({date, image}) => (
+                <div class="bg-content-1 rounded-md p-4">
+                    
+                </div>
+                <div></div>
+            ))}
+        </div>
+    )
+}
