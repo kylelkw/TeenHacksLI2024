@@ -1,5 +1,6 @@
 ---
 import Button from "../ui/Button.astro";
+import IconWithText from "../ui/IconWithText.astro";
 ---
 
 <div class="flex w-full h-[90vh] p-14 justify-center space-x-14 font-display">
@@ -7,15 +8,15 @@ import Button from "../ui/Button.astro";
         <div class="flex flex-col w-full px-16 pt-28 text-bg">
             <div class="flex flex-col w-[50%]">
                 <h1 class="font-medium text-6xl">For Participants</h1>
-                <p class="text-2xl font-bold mt-6">
+                <p class="text-xl font-bold mt-6">
                     We are not accepting participants at the moment. Check back in September 2024 to see if this page
                     changes!
                 </p>
             </div>
             <div class="absolute bottom-12 flex flex-col space-y-4">
-                <h1 class="text-2xl font-bold">Location: Unknown</h1>
-                <h1 class="text-2xl font-bold">Teams: Up to four teamates</h1>
-                <h1 class="text-2xl font-bold">Theme: Talent Show</h1>
+                <IconWithText icon="/icons/location.svg">Location: Unknown</IconWithText>
+                <IconWithText icon="/icons/team.svg">Teams: Up to four teamates</IconWithText>
+                <IconWithText icon="/icons/star.svg">Theme: Talent Show</IconWithText>
                 <Button text="APPLY TO JOIN NOW" href="/apply" style={"ACCENT1"} />
             </div>
         </div>
