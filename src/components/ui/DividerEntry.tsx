@@ -18,11 +18,11 @@ export default function DividerEntry({ text, icon }: Props) {
     const iconComponent = Icons[icon];
 
     return (
-        <div className="flex h-[75%] items-center space-x-4">
+        <div className="flex flex-grow h-[75%] items-center space-x-4">
             <div className="h-[70%] aspect-square bg-content-1 rounded-lg flex items-center justify-center">
                 {iconComponent}
             </div>
-            <h1 className="text-content-1 font-display font-semibold text-3xl">{text}</h1>
+            <span className="text-content-1 font-display font-semibold text-2xl">{text}</span>
         </div>
     );
 }
