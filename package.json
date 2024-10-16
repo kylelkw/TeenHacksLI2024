@@ -21,6 +21,7 @@
         "astro": "^4.11.5",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "swiper": "^11.1.14",
         "tailwindcss": "^3.4.4",
         "thli2024": "file:",
         "typescript": "^5.5.3"
