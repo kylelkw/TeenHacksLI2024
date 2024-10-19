@@ -14,7 +14,7 @@ const { isSticky = true, showMenu = true, showDarkModeSwitch = true } = Astro.pr
 <header
     class:list={[
         // { sticky: isSticky, relative: !isSticky },
-        "fixed top-0 z-30 hidden lg:flex p-6 justify-center items-center w-full h-24 rounded-b-3xl bg-bg/[.3] backdrop-blur-md ",
+        "fixed top-0 hidden lg:flex p-6 justify-center items-center w-full h-24 rounded-b-3xl bg-bg/[.3] backdrop-blur-md z-10",
     ]}
 >
     <a class="absolute left-8 h-[65%] flex items-center" href="/">

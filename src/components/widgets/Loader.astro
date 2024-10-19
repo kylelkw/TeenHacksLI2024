@@ -1,0 +1,113 @@
+
+
+
+<section class="load-screen fixed top-0 left-0 flex-col justify-center h-screen w-screen bg-accent-1 z-20">
+    <div class="absolute top-1/2 left-1/2 w-96 h-16 -translate-x-1/2">
+        <div class="loader relative h-full bg-bg rounded-full opacity-0"></div>
+    </div>
+    <div class="counter fixed top-14 left-14 flex text-bg font-display text-8xl [clip-path:_polygon(0_0,_100%_0,_100%_96px,_0_96px)]">
+        <div class="counter-1 digit">
+            <div class="num">0</div>
+            <div class="num relative -right-1/4">1</div>
+        </div>
+        <div class="counter-2 digit">
+            <div class="num">0</div>
+            <div class="num relative -right-1/4">1</div>
+            <div class="num">2</div>
+            <div class="num">3</div>
+            <div class="num">4</div>
+            <div class="num">5</div>
+            <div class="num">6</div>
+            <div class="num">7</div>
+            <div class="num">8</div>
+            <div class="num">9</div>
+            <div class="num">0</div>
+        </div>
+        <div class="counter-3 digit">
+            <div class="num">0</div>
+            <div class="num relative -right-1/4">1</div>
+            <div class="num">2</div>
+            <div class="num">3</div>
+            <div class="num">4</div>
+            <div class="num">5</div>
+            <div class="num">6</div>
+            <div class="num">7</div>
+            <div class="num">8</div>
+            <div class="num">9</div>
+            <div class="num">0</div>
+        </div>
+    </div>
+</section>
+
+<script>
+import { gsap } from "gsap";
+window.addEventListener("load", () => {
+    
+    const counter3 = document.querySelector(".counter-3");
+
+    for (let i = 0; i < 2; i++){
+        for (let j = 0; j < 10; j++){
+            const div = document.createElement("div");
+            div.className = "num";
+            div.textContent = j.toString();
+            counter3.appendChild(div);
+        }
+    }
+    
+    const finalDiv = document.createElement("div");
+    finalDiv.className = "num";
+    finalDiv.textContent = "0";
+    counter3.appendChild(finalDiv);
+
+    function animate(counter, duration, delay = 0){
+        const numHeight = counter.querySelector(".num").clientHeight;
+        const totalDistance = (counter.querySelectorAll(".num").length - 1) * numHeight;
+
+        gsap.to(counter, {
+            y: -totalDistance,
+            duration: duration,
+            delay: delay,
+            ease: "power2.inOut",
+        });
+    }
+
+    animate(counter3, 2);
+    animate(document.querySelector(".counter-2"),2);
+    animate(document.querySelector(".counter-1"),1.5,0.5);
+
+    gsap.to(".digit", {
+        top: "-150px",
+        stagger: {
+            amount: 0.25,
+        },
+        delay: 4,
+        duration: 1,
+        ease: "power4.inOut"
+    });
+
+    gsap.from (".loader", {
+        opacity: 100,
+        width: 0,
+        duration: 2,
+        ease: "power2.inOut",
+    });
+
+    gsap.to (".loader", {
+        scale: 40,
+        duration: 0.5,
+        delay: 1.5,
+        ease: "power2.inOut",
+    });
+    gsap.to (".load-screen", {
+        opacity: 0,
+        duration: 0.25,
+        delay: 1.5,
+        ease: "power2.inOut",
+        onComplete: () => {
+            document.querySelector(".load-screen").classList.replace("z-20","z-0")
+        }
+    });
+
+});
+
+</script>
