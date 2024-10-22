@@ -2,6 +2,7 @@
 import Layout from "./Layout.astro";
 import Header from "../components/widgets/Header.astro";
 import Footer from "../components/widgets/Footer.astro";
+import { slide } from 'astro:transitions';
 
 export interface Props {
     title?: String;
@@ -13,10 +14,20 @@ const Menu = true;
 ---
 
 <Layout title={title}>
-    <main class="absolute inset-0 h-screen w-screen">
-        <Header isSticky={Sticky} showMenu={Menu} class:list={"sticky top-0"} />
+    <main transition:animate="slide" class="absolute inset-0 h-screen w-screen">
+        <Header transition:persist isSticky={Sticky} showMenu={Menu} class:list={"sticky top-0"} />
         <slot />
 
         <Footer />
     </main>
 </Layout>
+
+<style>
+    main{
+        display: none;
+    }
+    html[data-load = "true"] > body > main{
+        display: block;
+    }
+  
+</style>

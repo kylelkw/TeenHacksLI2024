@@ -1,7 +1,7 @@
 
 
 
-<section class="load-screen fixed top-0 left-0 flex-col justify-center h-screen w-screen bg-accent-1 z-20">
+<section class="load-screen fixed top-0 left-0 flex-col justify-center h-screen w-screen bg-accent-1 z-20 transition-all">
     <div class="absolute top-1/2 left-1/2 w-96 h-16 -translate-x-1/2">
         <div class="loader relative h-full bg-bg rounded-full opacity-0"></div>
     </div>
@@ -41,10 +41,10 @@
 
 <script>
 import { gsap } from "gsap";
-window.addEventListener("load", () => {
-    
+document.addEventListener('astro:page-load', () => {
+    document.querySelector(".load-screen").classList.replace("hidden", "block");
     const counter3 = document.querySelector(".counter-3");
-
+    setTimeout(() => document.querySelector("html").dataset.load = "true", 1000);
     for (let i = 0; i < 2; i++){
         for (let j = 0; j < 10; j++){
             const div = document.createElement("div");
@@ -71,7 +71,7 @@ window.addEventListener("load", () => {
         });
     }
 
-    animate(counter3, 2);
+    animate(counter3, 1.65);
     animate(document.querySelector(".counter-2"),2);
     animate(document.querySelector(".counter-1"),1.5,0.5);
 
@@ -82,7 +82,7 @@ window.addEventListener("load", () => {
         },
         delay: 4,
         duration: 1,
-        ease: "power4.inOut"
+        ease: "power4.inOut",
     });
 
     gsap.from (".loader", {
@@ -104,10 +104,10 @@ window.addEventListener("load", () => {
         delay: 1.5,
         ease: "power2.inOut",
         onComplete: () => {
-            document.querySelector(".load-screen").classList.replace("z-20","-z-10")
+            document.querySelector(".load-screen").classList.replace("z-20","-z-10");
         }
     });
-
+    
 });
 
 </script>

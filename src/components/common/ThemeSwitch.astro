@@ -26,21 +26,58 @@
 </div>
 
 <script is:inline>
-    const html = document.querySelector("html");
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const defaultTheme = !prefersDarkMode ? "dark" : "light";
-    const preferredTheme = localStorage.getItem("theme");
-    if (!preferredTheme) {
-        localStorage.setItem("theme", defaultTheme);
-    }
-    html.dataset.theme = preferredTheme || defaultTheme;
+    // const html = document.querySelector("html");
+    // const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    // const defaultTheme = !prefersDarkMode ? "dark" : "light";
+    // const preferredTheme = localStorage.getItem("theme");
+    
+    // if (!preferredTheme) {
+    //     localStorage.setItem("theme", defaultTheme);
+    // }
+    // html.dataset.theme = preferredTheme || defaultTheme;
+    // document.addEventListener("astro:after-swap", () =>
+    //     document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"))
+    // );
+    // document.querySelector(".toggle-theme")?.addEventListener("change", () => {
+    //     const isDarkTheme = localStorage.getItem("theme") === "dark";
+    //     const newTheme = isDarkTheme ? "light" : "dark";
+    //     localStorage.setItem("theme", newTheme);
+    //     html.dataset.theme = newTheme;
+    // });
+    document.addEventListener("astro:after-swap", update);
+    document.addEventListener("DOMContentLoaded", update);
     document.addEventListener("astro:after-swap", () =>
         document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"))
     );
-    document.querySelector(".toggle-theme").addEventListener("click", () => {
-        const isDarkTheme = localStorage.getItem("theme") === "dark";
-        const newTheme = isDarkTheme ? "light" : "dark";
-        localStorage.setItem("theme", newTheme);
-        html.dataset.theme = newTheme;
-    });
+    function update() {
+        updatetheme();
+        themeevent();
+    }
+
+    const getTheme = () => localStorage.getItem("theme") || "dark";
+
+    const setTheme = (theme) => {
+        let themeController = document.querySelector(".toggle-theme");
+        localStorage.setItem("theme", theme);
+        document.documentElement.dataset.theme = theme;
+        themeController.checked = theme === "light";
+    };
+
+    function updatetheme() {
+        setTheme(getTheme());
+    }
+
+    function themeevent() {
+        let themeController = document.querySelector(".toggle-theme");
+
+        themeController?.addEventListener("change", () => {
+        if (themeController.checked) {
+            localStorage.setItem("theme", "light");
+            updatetheme();
+        } else {
+            localStorage.setItem("theme", "dark");
+            updatetheme();
+        }
+        });
+    }
 </script>
