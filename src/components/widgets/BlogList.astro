@@ -8,10 +8,10 @@ const {
 {
     items && (
         <div class:list={["w-full h-auto grid grid-cols-2 gap-7 p-14 items-center"]}>
-            {items.map(({title, tags, img, link}) => (
-                <a href={link} class="w-full h-auto flex flex-col text-content-1 font-display gap-2">
-                    <div class="w-full height-full bg-content-3 rounded-2xl">
-                        <Image src={img} alt="Headshot" width="1000" height="1600" class:list={"aspect-video rounded-md"}/>
+            {items.map(({title, author, tags, img, link}) => (
+                <a href={link} class="group w-full h-auto flex flex-col text-content-1 font-display gap-2">
+                    <div class="w-full height-full bg-content-3 rounded-2xl overflow-hidden">
+                        <img src={img} alt="Headshot" class:list={"group-hover:scale-125 aspect-video rounded-md object-cover transition-all"}/>
                     </div>
                     <span class="w-full text-xl">{tags}</span>
                     <span class="w-full text-4xl">{title}</span>
