@@ -9,9 +9,17 @@ const {
     items && (
         <div class:list={["w-full flex flex-wrap gap-7 items-center"]}>
             {items.map(({name, title, description, img}) => (
-                <div class="bg-content-3 flex justify-between items-center gap-4 p-2 pr-4 rounded-full">
+                <div class="group relative bg-content-3 flex justify-between items-center gap-4 p-2 pr-4 rounded-full">
                     <Image src={img} alt="Headshot" width="50" height="50" class:list={["aspect-square rounded-full"]}/>
                     <span class="text-4xl text-content-1 font-display text-center">{name}</span>
+                        <div class="absolute flex flex-col justify-between w-80 h-96 bg-content-3 p-6 rounded-3xl top-0 scale-0 group-hover:scale-100 group-hover:top-[120%] transition-all ease-linear z-[1]">
+                            <Image src={img} alt="Headshot" width="175" height="175" class:list={["aspect-square rounded-lg"]}/>
+                            <div class="flex flex-col gap-2">
+                                <span class="text-4xl text-content-1 font-display">{name}</span>
+                                <span class="text-md text-content-1 font-display text-opacity-50">{title}</span>
+                            </div>
+
+                        </div>
                 </div>
             ))}
         </div>
