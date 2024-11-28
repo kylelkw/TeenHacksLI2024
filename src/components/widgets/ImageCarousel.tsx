@@ -26,7 +26,7 @@ export default function ImageCarousel() {
                 {links.map((link) => {
                     return (
                         <SwiperSlide className="flex justify-center">
-                            <img src={link} className="h-full relative rounded-3xl" loading="lazy" />
+                            <img src={link} className="h-full relative rounded-3xl" width="1920" height="auto"/>
                         </SwiperSlide>
                     );
                 })}
