@@ -3,7 +3,7 @@ const { items = [] } = Astro.props;
 ---
 
 {items && (
-  <div class="w-full h-auto grid pb-14 gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-4">
+    <div class="w-full h-auto grid pb-14 gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-4 md:px-10 lg:px-20">
     {items.map(({ title, description }) => (
       <div class="group">
         <div class="relative p-4 w-full h-full aspect-[4/3] sm:aspect-square flex justify-center bg-content-3 rounded-2xl text-4xl text-center text-content-1 font-display transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
