@@ -23,13 +23,12 @@ export default function ImageCarousel() {
                 }}
                 modules={[Pagination, Autoplay]}
             >
-                {links.map((link) => {
-                    return (
-                        <SwiperSlide className="flex justify-center">
-                            <img src={link} className="h-full relative rounded-3xl" width="1920" height="auto"/>
-                        </SwiperSlide>
-                    );
-                })}
+                {links.map((link, index) => (
+                    <SwiperSlide key={index}>
+                        <img src={link} alt={`Carousel image ${index}`} className="object-cover w-full h-full" />
+                    </SwiperSlide>
+                ))}
+
             </Swiper>
         </div>
     );
