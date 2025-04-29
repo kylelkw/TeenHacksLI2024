@@ -30,7 +30,12 @@ import Button from "../ui/Button.astro";
           <p class="text-bg text-base sm:text-lg">
             Sign up to join our newsletter and be notified of future TeenHacks LI events
           </p>
-          <Button href="/join" text="Join Now" style="ACCENT1" />
+          <a href="https://forms.gle/Jrjq58s2daXpaqrm7" target="_blank" rel="noopener noreferrer">
+            <button class="bg-content-2 rounded-full h-10 hover:scale-105 active:scale-90 transition-all">
+              <span class="font-display font-bold text-content-1 p-6 text-lg">Join now</span>
+            </button>
+          </a>
+          
         </div>
       </div>
     </div>
@@ -41,10 +46,8 @@ import Button from "../ui/Button.astro";
         <p class="text-content-2 mb-4">Resources</p>
         <ItemColumn
           items={[
-            { title: 'Blogs', link: '/' },
+            { title: 'Blogs', link: '/blog' },
             { title: 'FAQs', link: '/' },
-            { title: 'Past Events', link: '/' },
-            { title: 'Past Pages', link: '/' },
           ]}
         />
       </div>
@@ -52,22 +55,21 @@ import Button from "../ui/Button.astro";
         <p class="text-content-2 mb-4">Company</p>
         <ItemColumn
           items={[
-            { title: 'About', link: '/' },
-            { title: 'Team', link: '/' },
-            { title: 'Sponsors', link: '/' },
-            { title: 'Press', link: '/' },
-            { title: 'Contact', link: '/' },
+            { title: 'About', link: '/about' },
+            { title: 'Sponsors', link: '/about' },
+            { title: 'Contact', link: 'mailto:thli@teenhacksli.com' },
           ]}
         />
       </div>
+
       <div class="min-w-[150px]">
         <p class="text-content-2 mb-4">Socials</p>
         <ItemColumn
           items={[
-            { title: 'Instagram', link: '/' },
-            { title: 'Discord', link: '/' },
-            { title: 'LinkedIn', link: '/' },
-            { title: 'Github', link: '/' },
+            { title: 'Instagram', link: 'https://www.instagram.com/teenhacksli/?hl=en' },
+            { title: 'Discord', link: 'https://discord.gg/vFKQTwv9vq' },
+            { title: 'LinkedIn', link: 'https://www.linkedin.com/company/teenhacks-li' },
+            { title: 'Github', link: 'https://github.com/TeenHacksLI' },
           ]}
         />
       </div>
