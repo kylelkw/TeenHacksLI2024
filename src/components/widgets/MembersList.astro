@@ -2,10 +2,10 @@
 import NameTileRow from '../ui/NameTileRow.astro';
 ---
 
-<section class="relative w-full h-fit bg-bg flex flex-col gap-14 p-14">
-    <span class="text-8xl text-content-1 font-display">Meet our team</span>
-    <span class="w-fit bg-accent-1 rounded-full p-3 px-4 text-4xl text-content-1 font-display text-center">Core Team</span>
-    <div class="w-full flex flex-wrap gap-7">
+<section class="relative w-full h-fit bg-bg flex flex-col gap-8 sm:gap-14 p-6 sm:p-14">
+    <span class="text-5xl sm:text-6xl md:text-8xl text-content-1 font-display">Meet our team</span>
+    <span class="w-fit bg-accent-1 rounded-full p-2 sm:p-3 px-3 sm:px-4 text-2xl sm:text-4xl text-content-1 font-display text-center">Core Team</span>
+    <div class="w-full flex flex-wrap gap-4 sm:gap-7">
         <NameTileRow
             items={[
                 {
@@ -32,29 +32,25 @@ import NameTileRow from '../ui/NameTileRow.astro';
                     description: "",
                     img: "/images/headshots/MackTam.jpg"
                 },
-
                 {
                     name: "Xiao Ma",
                     title: "Sponsorship",
                     description: "",
                     img: "/images/headshots/XiaoMa.jpg"
                 },
-
             ]}
         />
     </div>
-    <span class="w-fit bg-accent-2 rounded-full p-3 px-4 text-4xl text-content-1 font-display text-center">Organizers</span>
-    <div class="w-full flex flex-wrap gap-7">
+    <span class="w-fit bg-accent-2 rounded-full p-2 sm:p-3 px-3 sm:px-4 text-2xl sm:text-4xl text-content-1 font-display text-center">Organizers</span>
+    <div class="w-full flex flex-wrap gap-4 sm:gap-7">
         <NameTileRow
             items={[
-                
                 {
                     name: "Juwon Park",
                     title: "",
                     description: "",
                     img: "/images/headshots/JuwonPark.jpg"
                 },
-                
                 {
                     name: "Thomas Liu",
                     title: "",

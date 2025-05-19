@@ -3,35 +3,82 @@ import ThemeSwitch from "../common/ThemeSwitch.astro";
 import Navigation from "../common/Navigation.astro";
 import ThemedImage from "../ui/ThemedImage.tsx";
 import Button from "../ui/Button.astro";
-interface Props {
-    isSticky?: Boolean;
-    showMenu?: Boolean;
-    showDarkModeSwitch?: Boolean;
-}
 const { isSticky = true, showMenu = true, showDarkModeSwitch = true } = Astro.props;
 ---
 
 <header
     class:list={[
-        // { sticky: isSticky, relative: !isSticky },
-        "fixed top-0 hidden lg:flex p-6 justify-center items-center w-full h-24 rounded-b-3xl bg-black/40 backdrop-blur-md border-b border-white/10 z-50 shadow-md",
+        "fixed top-0 w-full z-50 shadow-md",
     ]}
 >
-    <a class="absolute left-8 h-[65%] flex items-center" href="/">
-        <ThemedImage
-            darkModeUrl="/icons/textLogoWhite.svg"
-            lightModeUrl="/icons/textLogoBlack.svg"
-            className="h-full"
-            loading="eager"
-            alt="Teenhacks Logo"
-            client:load
-        />
-    </a>
+    <!-- Desktop Header -->
+    <div class="hidden lg:flex p-6 justify-center items-center w-full h-24 rounded-b-3xl bg-black/40 backdrop-blur-md border-b border-white/10">
+        <a class="absolute left-8 h-[65%] flex items-center" href="/">
+            <ThemedImage
+                darkModeUrl="/icons/textLogoWhite.svg"
+                lightModeUrl="/icons/textLogoBlack.svg"
+                className="h-full"
+                loading="eager"
+                alt="Teenhacks Logo"
+                client:load
+            />
+        </a>
 
-    <Navigation />
+        <Navigation />
 
-    <div class="flex items-center justify-center absolute right-20 space-x-8">
-        <button class="bg-content-2 rounded-full h-10 hover:scale-105 active:scale-90 transition-all"><a class="font-display font-bold text-content-1 p-6 text-lg">Join now</a></button>
-        <ThemeSwitch transition:persist class:list={[{ hidden: !showDarkModeSwitch }]} />
+        <div class="flex items-center justify-center absolute right-20 space-x-8">
+            <button class="bg-content-2 rounded-full h-10 hover:scale-105 active:scale-90 transition-all">
+                <a class="font-display font-bold text-content-1 p-6 text-lg">Join now</a>
+            </button>
+            <ThemeSwitch transition:persist class:list={[{ hidden: !showDarkModeSwitch }]} />
+        </div>
+    </div>
+
+    <!-- Mobile Header -->
+    <div class="lg:hidden flex justify-between items-center p-4 bg-black/40 backdrop-blur-md border-b border-white/10">
+        <a class="h-12 flex items-center" href="/">
+            <ThemedImage
+                darkModeUrl="/icons/textLogoWhite.svg"
+                lightModeUrl="/icons/textLogoBlack.svg"
+                className="h-full"
+                loading="eager"
+                alt="Teenhacks Logo"
+                client:load
+            />
+        </a>
+        
+        <div class="flex items-center space-x-4">
+            <ThemeSwitch transition:persist class:list={[{ hidden: !showDarkModeSwitch }]} />
+            <button id="mobile-menu-button" class="text-content-1 w-10 h-10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-content-3 w-full">
+        <div class="flex flex-col p-4 space-y-4">
+            <a href="/" class="text-content-1 font-display font-medium text-xl py-2">Home</a>
+            <a href="/about" class="text-content-1 font-display font-medium text-xl py-2">About</a>
+            <a href="/sponsors" class="text-content-1 font-display font-medium text-xl py-2">Sponsors</a>
+            <a href="/blog" class="text-content-1 font-display font-medium text-xl py-2">Blog</a>
+            <button class="bg-content-2 rounded-full py-2 hover:scale-105 active:scale-90 transition-all">
+                <a class="font-display font-bold text-content-1 text-lg">Join now</a>
+            </button>
+        </div>
     </div>
 </header>
+
+<script>
+    // Toggle mobile menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+</script>

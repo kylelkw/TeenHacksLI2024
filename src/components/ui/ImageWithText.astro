@@ -1,21 +1,15 @@
 ---
 export type Orientation = "LTR" | "RTL";
 
-interface Props {
-    src: string;
-    title: string;
-    orientation?: Orientation;
-}
-
 const { src, title, orientation = "LTR" } = Astro.props;
 const ltr = orientation === "LTR";
 ---
 
-<section class={`flex ${!ltr ? "flex-row-reverse" : "flex"} items-center justify-center py-28`}>
-    <img src={src} class={`image-section-image ${ltr ? "rotate-left" : "rotate-right"}`} loading="lazy" />
-    <div class={`flex flex-col w-[40%] relative bottom-16 ${!ltr ? "mr-20" : "ml-20"}`}>
-        <h1 class="text-6xl text-accent-2 font-display text-center">{title}</h1>
-        <p class="text-content-2 mt-6 text-center">
+<section class={`flex flex-col ${ltr ? "md:flex-row" : "md:flex-row-reverse"} items-center justify-center py-14 sm:py-28`}>
+    <img src={src || "/placeholder.svg"} class={`image-section-image w-[80%] sm:w-[50%] md:w-[30%] ${ltr ? "rotate-left" : "rotate-right"}`} loading="lazy" />
+    <div class={`flex flex-col w-full sm:w-[80%] md:w-[40%] relative mt-8 md:mt-0 md:bottom-16 ${!ltr ? "md:mr-20" : "md:ml-20"}`}>
+        <h1 class="text-4xl sm:text-6xl text-accent-2 font-display text-center">{title}</h1>
+        <p class="text-content-2 mt-4 sm:mt-6 text-center">
             <slot />
         </p>
     </div>

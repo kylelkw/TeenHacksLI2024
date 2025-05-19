@@ -1,12 +1,8 @@
 ---
-interface Props {
-    icon: string;
-}
-
 const { icon } = Astro.props;
 ---
 
-<div class="flex space-x-6 items-center">
-    <object type="image/svg+xml" data={icon} class="h-full w-10 icon"></object>
-    <h1 class="text-xl font-bold"><slot /></h1>
+<div class="flex space-x-3 sm:space-x-6 items-center">
+    <object type="image/svg+xml" data={icon} class="h-full w-8 sm:w-10 icon"></object>
+    <h1 class="text-base sm:text-xl font-bold"><slot /></h1>
 </div>

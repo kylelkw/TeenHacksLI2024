@@ -6,44 +6,39 @@ import { Image } from 'astro:assets';
 
 <div class="group/container flex flex-col lg:flex-row w-full h-auto lg:h-[90vh] my-14 px-6 lg:px-14 justify-center gap-10 font-display">
   <!-- Left Block -->
-  <div class="relative group/left bg-content-1 rounded-3xl w-full lg:w-[65%] p-8 lg:p-14 flex flex-col justify-between text-bg">
+  <div class="relative group/left bg-content-1 rounded-3xl w-full lg:w-[65%] p-6 sm:p-8 lg:p-14 flex flex-col justify-between text-bg">
     <div class="flex flex-col gap-4">
-      <span class="font-medium text-5xl lg:text-6xl transition-all group-hover/container:text-5xl group-hover/left:text-6xl">
+      <span class="font-medium text-4xl sm:text-5xl lg:text-6xl transition-all group-hover/container:text-5xl group-hover/left:text-6xl">
         For Participants
       </span>
-      <span class="text-lg lg:text-xl font-bold transition-all group-hover/container:opacity-0 group-hover/left:opacity-100">
+      <span class="text-base sm:text-lg lg:text-xl font-bold transition-all group-hover/container:opacity-0 group-hover/left:opacity-100">
         We are not accepting participants at the moment. Check back later to see if this page changes!
       </span>
     </div>
 
     <div class="flex flex-col gap-4 mt-8">
-      <IconWithText icon="/icons/location.svg">Location: University Center Building, Adelphi University</IconWithText>
-      <IconWithText icon="/icons/team.svg">Teams: 1 to 4 people</IconWithText>
-      <IconWithText icon="/icons/star.svg">Theme: Video Game (the hackathon is the game, and you're one of the characters :) )</IconWithText>
+      <IconWithText icon="/icons/location.svg">
+        <span class="text-sm sm:text-base">Location: University Center Building, Adelphi University</span>
+      </IconWithText>
+      <IconWithText icon="/icons/team.svg">
+        <span class="text-sm sm:text-base">Teams: 1 to 4 people</span>
+      </IconWithText>
+      <IconWithText icon="/icons/star.svg">
+        <span class="text-sm sm:text-base">Theme: Video Game (the hackathon is the game, and you're one of the characters :) )</span>
+      </IconWithText>
       <div class="w-40">
         <Button text="APPLY TO JOIN NOW" href="/apply" style={"ACCENT1"} />
       </div>
     </div>
-    
-
-    {/*
-    <Image
-      src="/images/glassesBernie.png"
-      alt="Bernie with glasses"
-      width="250"
-      height="250"
-      class:list={["absolute right-0 top-[20%] -scale-x-100 group-hover/container:opacity-0 group-hover/left:opacity-100 transition-all"]}
-    />
-    */}
   </div>
 
   <!-- Right Block -->
-  <div class="relative group/right bg-accent-2 rounded-3xl w-full lg:w-[35%] transition-all ease-linear hover:w-full lg:hover:w-[70%] p-8 lg:p-14 flex flex-col justify-between text-bg">
+  <div class="relative group/right bg-accent-2 rounded-3xl w-full lg:w-[35%] transition-all ease-linear hover:w-full lg:hover:w-[70%] p-6 sm:p-8 lg:p-14 flex flex-col justify-between text-bg">
     <div class="flex flex-col gap-4">
-      <span class="font-medium text-5xl lg:text-6xl transition-all group-hover/right:text-6xl">
+      <span class="font-medium text-4xl sm:text-5xl lg:text-6xl transition-all group-hover/right:text-6xl">
         For Everyone Else
       </span>
-      <span class="text-lg lg:text-xl font-bold opacity-0 group-hover/right:opacity-100 transition-all">
+      <span class="text-base sm:text-lg lg:text-xl font-bold opacity-0 group-hover/right:opacity-100 transition-all">
         We do not really have judges (all judging is done by attendees), but we invite you to join as a mentor and hang out with some high school coding talent!
       </span>
     </div>
@@ -53,15 +48,5 @@ import { Image } from 'astro:assets';
         <Button text="APPLY TO JOIN NOW" href="https://forms.gle/Jrjq58s2daXpaqrm7" style={"ACCENT3"} />
       </div>
     </div>
-    
-    {/*
-    <Image
-      src="/images/staffBernie.png"
-      alt="Bernie with tie"
-      width="250"
-      height="250"
-      class:list={["absolute right-0 top-[20%] opacity-0 group-hover/right:opacity-100 transition-all"]}
-    />
-    */}
   </div>
 </div>
