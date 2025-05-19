@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/LandingLayout.astro";
+import SponsorsList from "../components/widgets/SponsorsList.astro";
+---
+<Layout title="Sponsors - TeenHacks LI">
+    <main class="w-full pt-24">
+
+        <SponsorsList 
+            tiers={[
+                {
+                    name: "Gold",
+                    color: "accent-1",
+                    sponsors: [
+                        {
+                            name: "J and College Consulting",
+                            logo: "/images/sponsorImg/LOGO DARK.svg",
+                            url: "https://www.jandcollege.com/"
+                        },
+                        {
+                            name: "TKS",
+                            logo: "/images/sponsorImg/TKS.png",
+                            url: "https://www.tks.world/?utm_medium=partnerships&utm_source=hackathon&utm_campaign=hackclub_2526"
+                        }
+                    ]
+                }
+            ]}
+        />
+    </main>
+</Layout>

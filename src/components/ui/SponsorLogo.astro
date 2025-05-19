@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+
+const { name, logo, url, width = 200, height = 200 } = Astro.props;
+---
+
+<a 
+    href={url} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="group flex items-center justify-center bg-content-3 rounded-2xl p-6 transition-all hover:scale-105"
+>
+    <Image 
+        src={logo || "/placeholder.svg"} 
+        alt={`${name} logo`} 
+        width={width} 
+        height={height} 
+        class="max-w-full max-h-full object-contain transition-all group-hover:brightness-110"
+    />
+</a>
