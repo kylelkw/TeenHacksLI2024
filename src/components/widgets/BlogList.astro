@@ -7,16 +7,15 @@ const {
 ---
 {
     items && (
-        <div class:list={["w-full h-auto grid grid-cols-2 gap-7 p-14 items-center"]}>
+        <div class:list={["w-full h-auto grid grid-cols-1 sm:grid-cols-2 gap-7 p-6 sm:p-10 md:p-14 items-center"]}>
             {items.map(({title, author, tags, img, link}) => (
                 <a href={link} class="group w-full h-auto flex flex-col text-content-1 font-display gap-2">
                     <div class="w-full height-full bg-content-3 rounded-2xl overflow-hidden">
-                        <img src={img} alt="Headshot" class:list={"group-hover:scale-125 aspect-video rounded-md object-cover transition-all"}/>
+                        <img src={img || "/placeholder.svg"} alt="Headshot" class:list={"group-hover:scale-125 aspect-video rounded-md object-cover transition-all"}/>
                     </div>
-                    <span class="w-full text-xl">{tags}</span>
-                    <span class="w-full text-4xl">{title}</span>
+                    <span class="w-full text-lg sm:text-xl">{tags}</span>
+                    <span class="w-full text-2xl sm:text-4xl">{title}</span>
                 </a>
-
             ))}
         </div>
     )

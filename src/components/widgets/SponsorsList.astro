@@ -4,19 +4,19 @@ import SponsorLogo from "../ui/SponsorLogo.astro";
 const { tiers = [] } = Astro.props;
 ---
 
-<section class="w-full flex flex-col gap-14 p-14">
-    <h1 class="text-8xl text-content-1 font-display">Our Sponsors</h1>
-    <p class="text-2xl text-content-2 max-w-3xl">
+<section class="w-full flex flex-col gap-8 sm:gap-14 p-6 sm:p-14">
+    <h1 class="text-5xl sm:text-6xl md:text-8xl text-content-1 font-display">Our Sponsors</h1>
+    <p class="text-xl sm:text-2xl text-content-2 max-w-3xl">
         TeenHacks LI is made possible by the generous support of our sponsors. 
         We're grateful for their commitment to empowering the next generation of innovators.
     </p>
 
     {tiers.map((tier) => (
-        <div class="w-full flex flex-col gap-6">
-            <div class={`w-fit bg-${tier.color} rounded-full p-3 px-6 text-4xl text-content-1 font-display text-center`}>
+        <div class="w-full flex flex-col gap-4 sm:gap-6">
+            <div class={`w-fit bg-${tier.color} rounded-full p-2 sm:p-3 px-4 sm:px-6 text-2xl sm:text-4xl text-content-1 font-display text-center`}>
                 {tier.name} Sponsors
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                 {tier.sponsors.map((sponsor) => (
                     <SponsorLogo 
                         name={sponsor.name}
@@ -28,15 +28,15 @@ const { tiers = [] } = Astro.props;
         </div>
     ))}
 
-    <div class="mt-10 p-8 bg-content-3 rounded-3xl">
-        <h2 class="text-4xl text-content-1 font-display mb-6">Become a Sponsor</h2>
-        <p class="text-xl text-content-2 mb-6">
+    <div class="mt-6 sm:mt-10 p-4 sm:p-8 bg-content-3 rounded-3xl">
+        <h2 class="text-2xl sm:text-4xl text-content-1 font-display mb-4 sm:mb-6">Become a Sponsor</h2>
+        <p class="text-base sm:text-xl text-content-2 mb-4 sm:mb-6">
             Interested in sponsoring TeenHacks LI? We offer various sponsorship tiers with different benefits.
             Reach out to us to learn more about how you can support the next generation of innovators.
         </p>
         <a 
             href="mailto:thli@teenhacksli.com" 
-            class="inline-block bg-content-1 text-bg rounded-2xl p-2 px-6 text-xl font-display font-bold hover:scale-105 transition-all active:scale-90"
+            class="inline-block bg-content-1 text-bg rounded-2xl p-2 px-4 sm:px-6 text-base sm:text-xl font-display font-bold hover:scale-105 transition-all active:scale-90"
         >
             Contact Us
         </a>

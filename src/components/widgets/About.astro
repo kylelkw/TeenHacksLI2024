@@ -7,7 +7,7 @@ import ItemGrid from '../ui/AboutGrid.astro';
 <!-- Hero section -->
 <section class="w-full flex flex-col lg:flex-row justify-between items-center gap-10 px-6 lg:px-14 py-10">
   <div class="flex flex-col gap-6 justify-center max-w-2xl">
-    <div class="text-5xl lg:text-8xl text-content-1 font-display font-semibold leading-tight">
+    <div class="text-4xl sm:text-5xl lg:text-8xl text-content-1 font-display font-semibold leading-tight">
       <span>Working To Bring You The Next 24 Hour <span class="text-accent-2">Hackathon</span></span>
     </div>
     <div>
@@ -15,15 +15,15 @@ import ItemGrid from '../ui/AboutGrid.astro';
     </div>
   </div>
 
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center mt-6 lg:mt-0">
     <Image 
       src="/images/VRRetroBernie.png"
       alt="Bernie with VR"
       width="400"
       height="400"
-      class:list={["border-4 border-content-2 rounded-full"]}
+      class:list={["w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] border-4 border-content-2 rounded-full"]}
     />
-    <div class="mt-2 text-xl text-content-2 flex justify-center">
+    <div class="mt-2 text-base sm:text-xl text-content-2 flex justify-center">
       <span>Meet Our Mascot 
         <span class="text-accent-1 font-bold"> BE</span>
         <span class="text-accent-2 font-bold">RN</span>
@@ -56,7 +56,7 @@ import ItemGrid from '../ui/AboutGrid.astro';
       },
       {
         title: "What If I Don't Have A Team?",
-        description: "We'll help you find a team in the discord and we'll have a team formation session to make sure you’re not alone (although flying solo is an option too)."
+        description: "We'll help you find a team in the discord and we'll have a team formation session to make sure you're not alone (although flying solo is an option too)."
       },
       {
         title: "What if I have other questions?",

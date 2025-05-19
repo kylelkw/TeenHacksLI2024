@@ -5,12 +5,12 @@ import EventSchedule from "../ui/EventSchedule.astro";
 const divs = Array.from;
 ---
 
-<div class="flex w-full h-[110vh] px-12 py-16 justify-center font-display">
-    <div class="bg-content-3 w-full pl-12 flex justify-center h-full items-center rounded-3xl">
-        <div class="w-full h-[80%] flex justify-center align-middle items-center relative z-0">
-            <div class="w-[45%] h-full items-center justify-center flex relative">
+<div class="flex w-full h-auto sm:h-[110vh] px-4 sm:px-12 py-10 sm:py-16 justify-center font-display">
+    <div class="bg-content-3 w-full pl-4 sm:pl-12 flex justify-center h-full items-center rounded-3xl py-10 sm:py-0">
+        <div class="w-full h-auto sm:h-[80%] flex justify-center align-middle items-center relative z-0">
+            <div class="w-full sm:w-[45%] h-full items-center justify-center flex relative">
                 <Calendar />
-                <h1 class="absolute text-center text-5xl font-semibold text-bg font-display w-[50%]">
+                <h1 class="absolute text-center text-3xl sm:text-5xl font-semibold text-bg font-display w-[80%] sm:w-[50%]">
                     Check back later for event date!
                 </h1>
             </div>

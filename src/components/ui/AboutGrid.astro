@@ -3,14 +3,14 @@ const { items = [] } = Astro.props;
 ---
 
 {items && (
-    <div class="w-full h-auto grid pb-14 gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-4 md:px-10 lg:px-20">
+    <div class="w-full h-auto grid pb-14 gap-5 sm:gap-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 md:px-10 lg:px-20">
     {items.map(({ title, description }) => (
       <div class="group">
-        <div class="relative p-4 w-full h-full aspect-[4/3] sm:aspect-square flex justify-center bg-content-3 rounded-2xl text-4xl text-center text-content-1 font-display transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div class="relative p-4 w-full h-full aspect-[4/3] sm:aspect-square flex justify-center bg-content-3 rounded-2xl text-3xl sm:text-4xl text-center text-content-1 font-display transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div class="absolute w-[85%] h-[95%] flex justify-center items-center [backface-visibility:hidden]">
             {title}
           </div>
-          <div class="absolute w-[85%] h-[95%] mb-7 flex justify-center items-center bg-content-3 rounded-2xl text-2xl text-content-2 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div class="absolute w-[85%] h-[95%] mb-7 flex justify-center items-center bg-content-3 rounded-2xl text-lg sm:text-2xl text-content-2 [transform:rotateY(180deg)] [backface-visibility:hidden]">
             {description}
           </div>
           <div class="absolute w-1/2 h-4 bg-bg rounded-full" />
