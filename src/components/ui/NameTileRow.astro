@@ -8,15 +8,24 @@ const {
 {
     items && (
         <div class:list={["w-full flex flex-wrap gap-4 sm:gap-7 items-center"]}>
-            {items.map(({name, title, description, img}) => (
+            {items.map(({name, title, description, bio, img}) => (
                 <div class="group relative bg-content-3 flex justify-between items-center gap-2 sm:gap-4 p-2 pr-3 sm:pr-4 rounded-full">
                     <Image src={img || "/placeholder.svg"} alt="Headshot" width="50" height="50" class:list={["w-10 sm:w-[50px] aspect-square rounded-full"]}/>
                     <span class="text-xl sm:text-4xl text-content-1 font-display text-center">{name}</span>
-                        <div class="absolute flex flex-col justify-between w-64 sm:w-80 h-80 sm:h-96 bg-content-3 p-4 sm:p-6 rounded-3xl top-0 scale-0 group-hover:scale-100 group-hover:top-[120%] transition-all ease-linear z-[1]">
-                            <Image src={img || "/placeholder.svg"} alt="Headshot" width="175" height="175" class:list={["aspect-square rounded-lg"]}/>
-                            <div class="flex flex-col gap-2">
-                                <span class="text-2xl sm:text-4xl text-content-1 font-display">{name}</span>
-                                <span class="text-sm sm:text-md text-content-1 font-display text-opacity-50">{title}</span>
+                        <div class="absolute flex flex-col justify-between w-72 sm:w-80 h-auto max-h-[500px] bg-content-3 p-4 sm:p-6 rounded-3xl top-0 scale-0 group-hover:scale-100 group-hover:top-[120%] transition-all ease-linear z-[1] overflow-y-auto">
+                            <div class="flex flex-col gap-4">
+                                <Image src={img || "/placeholder.svg"} alt="Headshot" width="175" height="175" class:list={["aspect-square rounded-lg"]}/>
+                                <div class="flex flex-col gap-2">
+                                    <span class="text-2xl sm:text-4xl text-content-1 font-display">{name}</span>
+                                    {title && (
+                                        <span class="text-sm sm:text-md text-content-1 font-display opacity-75">{title}</span>
+                                    )}
+                                </div>
+                                {bio && (
+                                    <div class="mt-2 pt-2 border-t border-content-2">
+                                        <p class="text-sm sm:text-base text-content-2 leading-relaxed">{bio}</p>
+                                    </div>
+                                )}
                             </div>
                         </div>
                 </div>
